@@ -1,0 +1,22 @@
+/* src/components/GraphStyles.css */
+.graph {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.graph h2 {
+    color: #333;
+}
+
+.graph-data {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin-top: 10px;
+    white-space: pre-wrap;
+}

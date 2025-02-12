@@ -1,0 +1,5 @@
+yfinance
+dotenv
+plotly
+pytesseract
+google-api-python-client
