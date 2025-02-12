@@ -1,4 +1,4 @@
-# Invest-simple-Project
+# Trade IQ Project
 
 A web application designed to assist beginner and intermediate investors by analyzing their current investment portfolio and providing personalized suggestions for better financial growth. The app offers insights into portfolio performance, risk assessment, diversification, customized investment advice, and market analysis based on specific investment themes.
 
