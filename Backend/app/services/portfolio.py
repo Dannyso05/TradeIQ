@@ -12,26 +12,23 @@ def load_stockinfo(assets: List[Asset]) -> List[yf.Ticker]:
             ticker = yf.Ticker(ticker_symbol)
             if ticker.history(period='1d').empty:  # Check if the stock data is valid
                 raise StockNotFound(ticker_symbol)
-            tickers.append(ticker)
+            tickers.append(ticker.history(period='1d'))
         except StockNotFound as snf:
             print(f"Stock not found: {snf.ticker_symbol}")  # Log the custom error message
-            # Optionally, you can choose to raise the exception again if you want to stop processing
-            raise  # Uncomment this line if you want to stop processing on error
+            raise 
         
         except Exception as e:  # Catching all other exceptions
             print(f"Error fetching ticker data: {e}")  # Log the error or handle it appropriately
+    
     return tickers
 
 def analyze_portfolio(assets: List[Asset]) -> dict:
     try:
-        tickers = load_stockinfo(assets=assets)
-
-    
-    # If no exceptions were raised, proceed with analysis
-        
-
+        infos = load_stockinfo(assets=assets)
+        print(infos)
+        print("yes error")
     except StockNotFound as snf:
-        for tic in tickers:
+        for tic in infos:
             print(tic.history(period="1d"))
         
         print(f"Stock not found: {snf.ticker_symbol}")  # Log the custom error message
@@ -44,14 +41,14 @@ def analyze_portfolio(assets: List[Asset]) -> dict:
         print(f"An error occurred while loading stock info: {e}")
         return {
             "risk_level": "Moderate",
-            "diversification": None,
-            "asset_concentration": None,
+            "diversification": "None",
+            "asset_concentration": "None"
         }
 
     return {
         "risk_level": "Moderate",
-        "diversification": None,
-        "asset_concentration": None
+        "diversification": "succestest",
+        "asset_concentration": "succestest"
     }
 
 def plotly_data(ticker):

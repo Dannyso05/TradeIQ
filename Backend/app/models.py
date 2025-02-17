@@ -6,14 +6,8 @@ class StockPrice(BaseModel):
     current_price: float
 
 class Asset(BaseModel):
-    name: str
     ticker: str
-    total_price: float
-
-# class Asset(BaseModel):
-#     name: str
-#     amount: float
-#     price_per_unit: float
+    quantity: float
 
 
 class Portfolio(BaseModel):
